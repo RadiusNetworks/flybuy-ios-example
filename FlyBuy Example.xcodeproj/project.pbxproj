@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B226FB022E76D05006A6F92 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B226FAF22E76D05006A6F92 /* user.swift */; };
+		2B226FB222E77393006A6F92 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B226FB122E77393006A6F92 /* WelcomeViewController.swift */; };
+		2B226FB422E77550006A6F92 /* UpdateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B226FB322E77550006A6F92 /* UpdateAccountViewController.swift */; };
+		2B5A3B8A22EA01FC004DC1AF /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A3B8922EA01FC004DC1AF /* OrderDetailsViewController.swift */; };
+		2B858BA522E649F800ED67A5 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B858BA422E649F800ED67A5 /* BorderedButton.swift */; };
+		2B858BA922E653FD00ED67A5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B858BA822E653FD00ED67A5 /* MenuViewController.swift */; };
+		2B858BAB22E6594A00ED67A5 /* RedeemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B858BAA22E6594A00ED67A5 /* RedeemViewController.swift */; };
+		2B858BAD22E660BF00ED67A5 /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B858BAC22E660BF00ED67A5 /* menu.swift */; };
+		2BA15DC222E0E3AA000DF9BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA15DC122E0E3AA000DF9BE /* AppDelegate.swift */; };
+		2BA15DC422E0E3AA000DF9BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA15DC322E0E3AA000DF9BE /* MainViewController.swift */; };
+		2BA15DC722E0E3AA000DF9BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA15DC522E0E3AA000DF9BE /* Main.storyboard */; };
+		2BA15DCC22E0E3AB000DF9BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA15DCA22E0E3AB000DF9BE /* LaunchScreen.storyboard */; };
+		2BA15DD422E0E572000DF9BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA15DD322E0E572000DF9BE /* Assets.xcassets */; };
+		2BD3DD5424216B3A000F06F5 /* FlyBuy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD3DD5224216B2F000F06F5 /* FlyBuy.framework */; };
+		2BD3DD5524216B3A000F06F5 /* FlyBuy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD3DD5224216B2F000F06F5 /* FlyBuy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2BFE3CC022E8C4B1005B9591 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE3CBF22E8C4B1005B9591 /* OrdersViewController.swift */; };
+		2BFE3CC222E8CA27005B9591 /* orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE3CC122E8CA27005B9591 /* orders.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2BD3DD3D24216327000F06F5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2BD3DD5524216B3A000F06F5 /* FlyBuy.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2B226FAF22E76D05006A6F92 /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
+		2B226FB122E77393006A6F92 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		2B226FB322E77550006A6F92 /* UpdateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccountViewController.swift; sourceTree = "<group>"; };
+		2B5A3B8922EA01FC004DC1AF /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
+		2B69C1E2234664D600F96760 /* FlyBuy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FlyBuy.framework; path = ../../../../Downloads/FlyBuy.framework; sourceTree = "<group>"; };
+		2B858BA422E649F800ED67A5 /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
+		2B858BA822E653FD00ED67A5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		2B858BAA22E6594A00ED67A5 /* RedeemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemViewController.swift; sourceTree = "<group>"; };
+		2B858BAC22E660BF00ED67A5 /* menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menu.swift; sourceTree = "<group>"; };
+		2BA15DBE22E0E3AA000DF9BE /* FlyBuy Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FlyBuy Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BA15DC122E0E3AA000DF9BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2BA15DC322E0E3AA000DF9BE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2BA15DC622E0E3AA000DF9BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2BA15DCB22E0E3AB000DF9BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2BA15DCD22E0E3AB000DF9BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BA15DD322E0E572000DF9BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BD3DD5224216B2F000F06F5 /* FlyBuy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FlyBuy.framework; sourceTree = "<group>"; };
+		2BFE3CBF22E8C4B1005B9591 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		2BFE3CC122E8CA27005B9591 /* orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orders.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2BA15DBB22E0E3AA000DF9BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BD3DD5424216B3A000F06F5 /* FlyBuy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B226FB522E77564006A6F92 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2B226FB322E77550006A6F92 /* UpdateAccountViewController.swift */,
+				2B226FB122E77393006A6F92 /* WelcomeViewController.swift */,
+				2B858BAA22E6594A00ED67A5 /* RedeemViewController.swift */,
+				2B858BA822E653FD00ED67A5 /* MenuViewController.swift */,
+				2BA15DC322E0E3AA000DF9BE /* MainViewController.swift */,
+				2BFE3CBF22E8C4B1005B9591 /* OrdersViewController.swift */,
+				2B5A3B8922EA01FC004DC1AF /* OrderDetailsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		2B226FB622E7757D006A6F92 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B858BAC22E660BF00ED67A5 /* menu.swift */,
+				2B226FAF22E76D05006A6F92 /* user.swift */,
+				2BFE3CC122E8CA27005B9591 /* orders.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B226FB722E775A4006A6F92 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2B858BA422E649F800ED67A5 /* BorderedButton.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2B226FB822E775B2006A6F92 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2BA15DCA22E0E3AB000DF9BE /* LaunchScreen.storyboard */,
+				2BA15DC522E0E3AA000DF9BE /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		2B226FB922E775C7006A6F92 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2BA15DD322E0E572000DF9BE /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		2B63310122F0EDA400C1814A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B69C1E2234664D600F96760 /* FlyBuy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2BA15DB522E0E3AA000DF9BE = {
+			isa = PBXGroup;
+			children = (
+				2BA15DC022E0E3AA000DF9BE /* FlyBuy Example */,
+				2BA15DBF22E0E3AA000DF9BE /* Products */,
+				2B63310122F0EDA400C1814A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2BA15DBF22E0E3AA000DF9BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2BA15DBE22E0E3AA000DF9BE /* FlyBuy Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2BA15DC022E0E3AA000DF9BE /* FlyBuy Example */ = {
+			isa = PBXGroup;
+			children = (
+				2BD3DD5224216B2F000F06F5 /* FlyBuy.framework */,
+				2BFE3CBE22E8C18D005B9591 /* Libraries */,
+				2B226FB922E775C7006A6F92 /* Assets */,
+				2B226FB822E775B2006A6F92 /* Storyboards */,
+				2B226FB722E775A4006A6F92 /* Extensions */,
+				2B226FB622E7757D006A6F92 /* Models */,
+				2B226FB522E77564006A6F92 /* View Controllers */,
+				2BA15DC122E0E3AA000DF9BE /* AppDelegate.swift */,
+				2BA15DCD22E0E3AB000DF9BE /* Info.plist */,
+			);
+			path = "FlyBuy Example";
+			sourceTree = "<group>";
+		};
+		2BFE3CBE22E8C18D005B9591 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2BA15DBD22E0E3AA000DF9BE /* FlyBuy Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BA15DD022E0E3AB000DF9BE /* Build configuration list for PBXNativeTarget "FlyBuy Example" */;
+			buildPhases = (
+				2BA15DBA22E0E3AA000DF9BE /* Sources */,
+				2BA15DBB22E0E3AA000DF9BE /* Frameworks */,
+				2BA15DBC22E0E3AA000DF9BE /* Resources */,
+				2BD3DD3D24216327000F06F5 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FlyBuy Example";
+			productName = "FlyBuy Example";
+			productReference = 2BA15DBE22E0E3AA000DF9BE /* FlyBuy Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2BA15DB622E0E3AA000DF9BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Radius Networks";
+				TargetAttributes = {
+					2BA15DBD22E0E3AA000DF9BE = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 2BA15DB922E0E3AA000DF9BE /* Build configuration list for PBXProject "FlyBuy Example" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2BA15DB522E0E3AA000DF9BE;
+			productRefGroup = 2BA15DBF22E0E3AA000DF9BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2BA15DBD22E0E3AA000DF9BE /* FlyBuy Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2BA15DBC22E0E3AA000DF9BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BA15DCC22E0E3AB000DF9BE /* LaunchScreen.storyboard in Resources */,
+				2BA15DD422E0E572000DF9BE /* Assets.xcassets in Resources */,
+				2BA15DC722E0E3AA000DF9BE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2BA15DBA22E0E3AA000DF9BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BA15DC422E0E3AA000DF9BE /* MainViewController.swift in Sources */,
+				2B226FB222E77393006A6F92 /* WelcomeViewController.swift in Sources */,
+				2B858BAD22E660BF00ED67A5 /* menu.swift in Sources */,
+				2BFE3CC022E8C4B1005B9591 /* OrdersViewController.swift in Sources */,
+				2B226FB022E76D05006A6F92 /* user.swift in Sources */,
+				2B858BA522E649F800ED67A5 /* BorderedButton.swift in Sources */,
+				2BA15DC222E0E3AA000DF9BE /* AppDelegate.swift in Sources */,
+				2B226FB422E77550006A6F92 /* UpdateAccountViewController.swift in Sources */,
+				2B858BAB22E6594A00ED67A5 /* RedeemViewController.swift in Sources */,
+				2B5A3B8A22EA01FC004DC1AF /* OrderDetailsViewController.swift in Sources */,
+				2BFE3CC222E8CA27005B9591 /* orders.swift in Sources */,
+				2B858BA922E653FD00ED67A5 /* MenuViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2BA15DC522E0E3AA000DF9BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BA15DC622E0E3AA000DF9BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2BA15DCA22E0E3AB000DF9BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BA15DCB22E0E3AB000DF9BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2BA15DCE22E0E3AB000DF9BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2BA15DCF22E0E3AB000DF9BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2BA15DD122E0E3AB000DF9BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "FlyBuy\\ Example/FlyBuy.framework";
+				DEVELOPMENT_TEAM = DF6DBXCH9A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FlyBuy\\ Example",
+				);
+				INFOPLIST_FILE = "FlyBuy Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.radiusnetworks.flybuy.ios-example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2BA15DD222E0E3AB000DF9BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "FlyBuy\\ Example/FlyBuy.framework";
+				DEVELOPMENT_TEAM = DF6DBXCH9A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FlyBuy\\ Example",
+				);
+				INFOPLIST_FILE = "FlyBuy Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.radiusnetworks.flybuy.ios-example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2BA15DB922E0E3AA000DF9BE /* Build configuration list for PBXProject "FlyBuy Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BA15DCE22E0E3AB000DF9BE /* Debug */,
+				2BA15DCF22E0E3AB000DF9BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BA15DD022E0E3AB000DF9BE /* Build configuration list for PBXNativeTarget "FlyBuy Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BA15DD122E0E3AB000DF9BE /* Debug */,
+				2BA15DD222E0E3AB000DF9BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2BA15DB622E0E3AA000DF9BE /* Project object */;
+}
