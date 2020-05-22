@@ -123,7 +123,7 @@ func createOrder(user:User, orderItems:[MenuItem], orderTotal:Double, completion
                                     carColor: user.vehicleColor,
                                     licensePlate: user.licensePlate)
 
-    let orderId = "1234"
+    let orderId = String(arc4random())
     let siteId = (FlyBuy.sites.all?.first?.id)!
     let pickupDateStart = Date()
     let pickupDateEnd = Date(timeIntervalSinceNow: 3600)

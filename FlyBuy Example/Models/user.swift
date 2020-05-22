@@ -26,7 +26,8 @@ func loadLocalUser() -> User {
   let vc = UserDefaults.standard.string(forKey: "vehicleColor") ?? ""
   let lp = UserDefaults.standard.string(forKey: "licensePlate") ?? ""
   let fb = UserDefaults.standard.string(forKey: "flyBuyToken") ?? ""
-    let user = User(name: nm, email: em, phone: ph, vehicleType: vt, vehicleColor: vc, licensePlate: lp, flyBuyToken: fb)
+    
+  let user = User(name: nm, email: em, phone: ph, vehicleType: vt, vehicleColor: vc, licensePlate: lp, flyBuyToken: fb)
   return user
 }
 

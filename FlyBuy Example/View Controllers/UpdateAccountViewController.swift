@@ -29,16 +29,15 @@ class UpdateAccountViewController: UITableViewController {
     let vc = vehicleColor.text!
     let lp = licensePlate.text!
 
-    let flybuyCustomer = FlyBuy.customer.current
     let customerInfo = CustomerInfo.init(name: nm, carType: vt, carColor: vc, licensePlate: lp, phone: ph)
     
-    if (flybuyCustomer != nil) {
+    if (FlyBuy.customer.current != nil) {
       FlyBuy.customer.update(customerInfo)
     } else {
       FlyBuy.customer.create(customerInfo, termsOfService: true, ageVerification: true)
     }
     
-    let fb = (FlyBuy.customer.current?.token)!
+    let fb = FlyBuy.customer.current?.token ?? ""
     let user = User(name: nm, email: em, phone: ph, vehicleType: vt, vehicleColor: vc, licensePlate: lp, flyBuyToken: fb)
     saveLocalUser(user: user)
     

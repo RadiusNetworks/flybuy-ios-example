@@ -28,7 +28,7 @@ class OrderDetailsViewController: UIViewController {
         createOrderEvent(order: flyBuyOrder, customerState: .enRoute) { (result) in
           if result == true {
             self.showAlert(title: "See you soon!", msg: "Your food will be ready on arrival.")
-            self.toggleButtons(state: CustomerState.waiting)
+            self.toggleButtons(state: CustomerState.enRoute)
           }
           else {
             self.showAlert(title: "Uh-oh!", msg: "Something went wrong")
