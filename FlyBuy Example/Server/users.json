@@ -1,0 +1,11 @@
+[
+  {
+    "vehicle_type": "BMW",
+    "name": "James Doe",
+    "license_plate": "JAMES1",
+    "vehicle_color": "Neon Green",
+    "token": "YcUUdLt2GcMByGXGSUHWsbX8",
+    "password": "password",
+    "email": "james@example.org"
+  }
+]
