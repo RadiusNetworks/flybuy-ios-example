@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -62,6 +62,7 @@
 		2BFE3CBF22E8C4B1005B9591 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		2BFE3CC122E8CA27005B9591 /* orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orders.swift; sourceTree = "<group>"; };
 		3DE27AE569CF9A327D5E516D /* Pods-FlyBuy Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyBuy Example.release.xcconfig"; path = "Target Support Files/Pods-FlyBuy Example/Pods-FlyBuy Example.release.xcconfig"; sourceTree = "<group>"; };
+		6184FA1E24B4D35800C8B2C8 /* FlyBuy Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FlyBuy Example.entitlements"; sourceTree = "<group>"; };
 		97AB1D38C784685BF94D7728 /* Pods-FlyBuy Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyBuy Example.debug.xcconfig"; path = "Target Support Files/Pods-FlyBuy Example/Pods-FlyBuy Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D856F56C58594BC9E3C29A21 /* Pods_FlyBuy_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyBuy_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -158,6 +159,7 @@
 		2BA15DC022E0E3AA000DF9BE /* FlyBuy Example */ = {
 			isa = PBXGroup;
 			children = (
+				6184FA1E24B4D35800C8B2C8 /* FlyBuy Example.entitlements */,
 				2BD3DD5224216B2F000F06F5 /* FlyBuy.framework */,
 				2BFE3CBE22E8C18D005B9591 /* Libraries */,
 				2B226FB922E775C7006A6F92 /* Assets */,
@@ -184,7 +186,6 @@
 				97AB1D38C784685BF94D7728 /* Pods-FlyBuy Example.debug.xcconfig */,
 				3DE27AE569CF9A327D5E516D /* Pods-FlyBuy Example.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -467,6 +468,7 @@
 			baseConfigurationReference = 97AB1D38C784685BF94D7728 /* Pods-FlyBuy Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "FlyBuy Example/FlyBuy Example.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "FlyBuy\\ Example/FlyBuy.framework";
 				DEVELOPMENT_TEAM = DF6DBXCH9A;
@@ -492,6 +494,7 @@
 			baseConfigurationReference = 3DE27AE569CF9A327D5E516D /* Pods-FlyBuy Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "FlyBuy Example/FlyBuy Example.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "FlyBuy\\ Example/FlyBuy.framework";
 				DEVELOPMENT_TEAM = DF6DBXCH9A;
