@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import FlyBuy
+import FlyBuySDK
 
 struct User {
   let name: String

@@ -20,11 +20,10 @@
 		2BA15DC722E0E3AA000DF9BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA15DC522E0E3AA000DF9BE /* Main.storyboard */; };
 		2BA15DCC22E0E3AB000DF9BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA15DCA22E0E3AB000DF9BE /* LaunchScreen.storyboard */; };
 		2BA15DD422E0E572000DF9BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA15DD322E0E572000DF9BE /* Assets.xcassets */; };
-		2BD3DD5424216B3A000F06F5 /* FlyBuy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD3DD5224216B2F000F06F5 /* FlyBuy.framework */; };
-		2BD3DD5524216B3A000F06F5 /* FlyBuy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD3DD5224216B2F000F06F5 /* FlyBuy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2BFE3CC022E8C4B1005B9591 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE3CBF22E8C4B1005B9591 /* OrdersViewController.swift */; };
 		2BFE3CC222E8CA27005B9591 /* orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE3CC122E8CA27005B9591 /* orders.swift */; };
-		97C11A8EA4060F8124E3AF77 /* Pods_FlyBuy_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D856F56C58594BC9E3C29A21 /* Pods_FlyBuy_Example.framework */; };
+		6115C8DE251A85B400E12268 /* FlyBuySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6115C8DD251A85B400E12268 /* FlyBuySDK.framework */; };
+		6115C8DF251A85B400E12268 /* FlyBuySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6115C8DD251A85B400E12268 /* FlyBuySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,7 +33,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2BD3DD5524216B3A000F06F5 /* FlyBuy.framework in Embed Frameworks */,
+				6115C8DF251A85B400E12268 /* FlyBuySDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,7 +45,6 @@
 		2B226FB122E77393006A6F92 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		2B226FB322E77550006A6F92 /* UpdateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccountViewController.swift; sourceTree = "<group>"; };
 		2B5A3B8922EA01FC004DC1AF /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
-		2B69C1E2234664D600F96760 /* FlyBuy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FlyBuy.framework; path = ../../../../Downloads/FlyBuy.framework; sourceTree = "<group>"; };
 		2B858BA422E649F800ED67A5 /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		2B858BA822E653FD00ED67A5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		2B858BAA22E6594A00ED67A5 /* RedeemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemViewController.swift; sourceTree = "<group>"; };
@@ -58,13 +56,12 @@
 		2BA15DCB22E0E3AB000DF9BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BA15DCD22E0E3AB000DF9BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BA15DD322E0E572000DF9BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2BD3DD5224216B2F000F06F5 /* FlyBuy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FlyBuy.framework; sourceTree = "<group>"; };
 		2BFE3CBF22E8C4B1005B9591 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		2BFE3CC122E8CA27005B9591 /* orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orders.swift; sourceTree = "<group>"; };
 		3DE27AE569CF9A327D5E516D /* Pods-FlyBuy Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyBuy Example.release.xcconfig"; path = "Target Support Files/Pods-FlyBuy Example/Pods-FlyBuy Example.release.xcconfig"; sourceTree = "<group>"; };
+		6115C8DD251A85B400E12268 /* FlyBuySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FlyBuySDK.framework; sourceTree = "<group>"; };
 		6184FA1E24B4D35800C8B2C8 /* FlyBuy Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FlyBuy Example.entitlements"; sourceTree = "<group>"; };
 		97AB1D38C784685BF94D7728 /* Pods-FlyBuy Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyBuy Example.debug.xcconfig"; path = "Target Support Files/Pods-FlyBuy Example/Pods-FlyBuy Example.debug.xcconfig"; sourceTree = "<group>"; };
-		D856F56C58594BC9E3C29A21 /* Pods_FlyBuy_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyBuy_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BD3DD5424216B3A000F06F5 /* FlyBuy.framework in Frameworks */,
-				97C11A8EA4060F8124E3AF77 /* Pods_FlyBuy_Example.framework in Frameworks */,
+				6115C8DE251A85B400E12268 /* FlyBuySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,8 +128,7 @@
 		2B63310122F0EDA400C1814A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2B69C1E2234664D600F96760 /* FlyBuy.framework */,
-				D856F56C58594BC9E3C29A21 /* Pods_FlyBuy_Example.framework */,
+				6115C8DD251A85B400E12268 /* FlyBuySDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				6184FA1E24B4D35800C8B2C8 /* FlyBuy Example.entitlements */,
-				2BD3DD5224216B2F000F06F5 /* FlyBuy.framework */,
 				2BFE3CBE22E8C18D005B9591 /* Libraries */,
 				2B226FB922E775C7006A6F92 /* Assets */,
 				2B226FB822E775B2006A6F92 /* Storyboards */,
@@ -470,11 +464,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "FlyBuy Example/FlyBuy Example.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "FlyBuy\\ Example/FlyBuy.framework";
+				DEVELOPMENT_ASSET_PATHS = FlyBuySDK.framework;
 				DEVELOPMENT_TEAM = DF6DBXCH9A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FlyBuy\\ Example",
 					"$(PROJECT_DIR)/FlyBuy\\ Example",
 				);
 				INFOPLIST_FILE = "FlyBuy Example/Info.plist";
@@ -496,11 +491,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "FlyBuy Example/FlyBuy Example.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "FlyBuy\\ Example/FlyBuy.framework";
+				DEVELOPMENT_ASSET_PATHS = FlyBuySDK.framework;
 				DEVELOPMENT_TEAM = DF6DBXCH9A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/FlyBuy\\ Example",
 					"$(PROJECT_DIR)/FlyBuy\\ Example",
 				);
 				INFOPLIST_FILE = "FlyBuy Example/Info.plist";
