@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,8 +22,7 @@
 		2BA15DD422E0E572000DF9BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA15DD322E0E572000DF9BE /* Assets.xcassets */; };
 		2BFE3CC022E8C4B1005B9591 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE3CBF22E8C4B1005B9591 /* OrdersViewController.swift */; };
 		2BFE3CC222E8CA27005B9591 /* orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE3CC122E8CA27005B9591 /* orders.swift */; };
-		6115C8DE251A85B400E12268 /* FlyBuySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6115C8DD251A85B400E12268 /* FlyBuySDK.framework */; };
-		6115C8DF251A85B400E12268 /* FlyBuySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6115C8DD251A85B400E12268 /* FlyBuySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		61BF645A251D0C3700F1CF1F /* FlyBuySDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61BF6459251D0C3700F1CF1F /* FlyBuySDK.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,7 +32,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6115C8DF251A85B400E12268 /* FlyBuySDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,8 +57,8 @@
 		2BFE3CBF22E8C4B1005B9591 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		2BFE3CC122E8CA27005B9591 /* orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orders.swift; sourceTree = "<group>"; };
 		3DE27AE569CF9A327D5E516D /* Pods-FlyBuy Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyBuy Example.release.xcconfig"; path = "Target Support Files/Pods-FlyBuy Example/Pods-FlyBuy Example.release.xcconfig"; sourceTree = "<group>"; };
-		6115C8DD251A85B400E12268 /* FlyBuySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FlyBuySDK.framework; sourceTree = "<group>"; };
 		6184FA1E24B4D35800C8B2C8 /* FlyBuy Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FlyBuy Example.entitlements"; sourceTree = "<group>"; };
+		61BF6459251D0C3700F1CF1F /* FlyBuySDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FlyBuySDK.xcframework; sourceTree = "<group>"; };
 		97AB1D38C784685BF94D7728 /* Pods-FlyBuy Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyBuy Example.debug.xcconfig"; path = "Target Support Files/Pods-FlyBuy Example/Pods-FlyBuy Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6115C8DE251A85B400E12268 /* FlyBuySDK.framework in Frameworks */,
+				61BF645A251D0C3700F1CF1F /* FlyBuySDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +126,7 @@
 		2B63310122F0EDA400C1814A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6115C8DD251A85B400E12268 /* FlyBuySDK.framework */,
+				61BF6459251D0C3700F1CF1F /* FlyBuySDK.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -464,7 +462,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "FlyBuy Example/FlyBuy Example.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = FlyBuySDK.framework;
+				DEVELOPMENT_ASSET_PATHS = FlyBuySDK.xcframework;
 				DEVELOPMENT_TEAM = DF6DBXCH9A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -491,7 +489,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "FlyBuy Example/FlyBuy Example.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = FlyBuySDK.framework;
+				DEVELOPMENT_ASSET_PATHS = FlyBuySDK.xcframework;
 				DEVELOPMENT_TEAM = DF6DBXCH9A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
