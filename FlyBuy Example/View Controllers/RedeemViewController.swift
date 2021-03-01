@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FlyBuySDK
+import FlyBuy
 
 class RedeemViewController: UITableViewController {
 
@@ -50,25 +50,25 @@ class RedeemViewController: UITableViewController {
     
     @IBAction func didPressClaimButton(_ sender: Any) {
       let redemptionCode = code.text!
-      let flybuyCustomer = FlyBuy.customer.current
+        let flybuyCustomer = FlyBuy.Core.customer.current
 
       if (flybuyCustomer != nil) {
         let customerInfo = flybuyCustomer?.info
         
-        FlyBuy.orders.claim(withRedemptionCode: redemptionCode, customerInfo: customerInfo!) { (order, error) -> (Void) in
+        FlyBuy.Core.orders.claim(withRedemptionCode: redemptionCode, customerInfo: customerInfo!) { (order, error) -> (Void) in
           if (order == nil) {
             self.showErrorAlert()
           } else {
-            FlyBuy.orders.fetch()
+            FlyBuy.Core.orders.fetch()
             self.showRedeemAlert()
           }
         }
       } else {
-        FlyBuy.orders.fetch(withRedemptionCode: redemptionCode) { (order, error) -> (Void) in
+        FlyBuy.Core.orders.fetch(withRedemptionCode: redemptionCode) { (order, error) -> (Void) in
           if (order == nil) {
             self.showErrorAlert()
           } else {
-            FlyBuy.orders.fetch()
+            FlyBuy.Core.orders.fetch()
             self.showRedeemAlert()
           }
         }

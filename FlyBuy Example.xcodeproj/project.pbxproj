@@ -22,7 +22,7 @@
 		2BA15DD422E0E572000DF9BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA15DD322E0E572000DF9BE /* Assets.xcassets */; };
 		2BFE3CC022E8C4B1005B9591 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE3CBF22E8C4B1005B9591 /* OrdersViewController.swift */; };
 		2BFE3CC222E8CA27005B9591 /* orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE3CC122E8CA27005B9591 /* orders.swift */; };
-		61BF645A251D0C3700F1CF1F /* FlyBuySDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61BF6459251D0C3700F1CF1F /* FlyBuySDK.xcframework */; };
+		615DB96A25ED49EC003F6226 /* FlyBuyPickup in Frameworks */ = {isa = PBXBuildFile; productRef = 615DB96925ED49EC003F6226 /* FlyBuyPickup */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,7 +58,6 @@
 		2BFE3CC122E8CA27005B9591 /* orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orders.swift; sourceTree = "<group>"; };
 		3DE27AE569CF9A327D5E516D /* Pods-FlyBuy Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyBuy Example.release.xcconfig"; path = "Target Support Files/Pods-FlyBuy Example/Pods-FlyBuy Example.release.xcconfig"; sourceTree = "<group>"; };
 		6184FA1E24B4D35800C8B2C8 /* FlyBuy Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FlyBuy Example.entitlements"; sourceTree = "<group>"; };
-		61BF6459251D0C3700F1CF1F /* FlyBuySDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FlyBuySDK.xcframework; sourceTree = "<group>"; };
 		97AB1D38C784685BF94D7728 /* Pods-FlyBuy Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyBuy Example.debug.xcconfig"; path = "Target Support Files/Pods-FlyBuy Example/Pods-FlyBuy Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61BF645A251D0C3700F1CF1F /* FlyBuySDK.xcframework in Frameworks */,
+				615DB96A25ED49EC003F6226 /* FlyBuyPickup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +125,6 @@
 		2B63310122F0EDA400C1814A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				61BF6459251D0C3700F1CF1F /* FlyBuySDK.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -153,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				6184FA1E24B4D35800C8B2C8 /* FlyBuy Example.entitlements */,
-				2BFE3CBE22E8C18D005B9591 /* Libraries */,
 				2B226FB922E775C7006A6F92 /* Assets */,
 				2B226FB822E775B2006A6F92 /* Storyboards */,
 				2B226FB722E775A4006A6F92 /* Extensions */,
@@ -163,13 +160,6 @@
 				2BA15DCD22E0E3AB000DF9BE /* Info.plist */,
 			);
 			path = "FlyBuy Example";
-			sourceTree = "<group>";
-		};
-		2BFE3CBE22E8C18D005B9591 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Libraries;
 			sourceTree = "<group>";
 		};
 		3A98BF1D679B05ED1BF9D87B /* Pods */ = {
@@ -200,6 +190,9 @@
 			dependencies = (
 			);
 			name = "FlyBuy Example";
+			packageProductDependencies = (
+				615DB96925ED49EC003F6226 /* FlyBuyPickup */,
+			);
 			productName = "FlyBuy Example";
 			productReference = 2BA15DBE22E0E3AA000DF9BE /* FlyBuy Example.app */;
 			productType = "com.apple.product-type.application";
@@ -233,6 +226,9 @@
 				Base,
 			);
 			mainGroup = 2BA15DB522E0E3AA000DF9BE;
+			packageReferences = (
+				615DB96825ED49EC003F6226 /* XCRemoteSwiftPackageReference "flybuy-ios" */,
+			);
 			productRefGroup = 2BA15DBF22E0E3AA000DF9BE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -462,7 +458,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "FlyBuy Example/FlyBuy Example.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = FlyBuySDK.xcframework;
 				DEVELOPMENT_TEAM = DF6DBXCH9A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -489,7 +484,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "FlyBuy Example/FlyBuy Example.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = FlyBuySDK.xcframework;
 				DEVELOPMENT_TEAM = DF6DBXCH9A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -531,6 +525,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		615DB96825ED49EC003F6226 /* XCRemoteSwiftPackageReference "flybuy-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:RadiusNetworks/flybuy-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		615DB96925ED49EC003F6226 /* FlyBuyPickup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 615DB96825ED49EC003F6226 /* XCRemoteSwiftPackageReference "flybuy-ios" */;
+			productName = FlyBuyPickup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2BA15DB622E0E3AA000DF9BE /* Project object */;
 }

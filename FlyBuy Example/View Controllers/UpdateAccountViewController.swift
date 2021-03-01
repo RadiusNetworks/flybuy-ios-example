@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FlyBuySDK
+import FlyBuy
 
 class UpdateAccountViewController: UITableViewController {
   
@@ -29,15 +29,15 @@ class UpdateAccountViewController: UITableViewController {
     let vc = vehicleColor.text!
     let lp = licensePlate.text!
 
-    let customerInfo = CustomerInfo.init(name: nm, carType: vt, carColor: vc, licensePlate: lp, phone: ph)
+    let customerInfo = FlyBuy.CustomerInfo.init(name: nm, carType: vt, carColor: vc, licensePlate: lp, phone: ph)
     
-    if (FlyBuy.customer.current != nil) {
-      FlyBuy.customer.update(customerInfo)
+    if (FlyBuy.Core.customer.current != nil) {
+        FlyBuy.Core.customer.update(customerInfo)
     } else {
-      FlyBuy.customer.create(customerInfo, termsOfService: true, ageVerification: true)
+        FlyBuy.Core.customer.create(customerInfo, termsOfService: true, ageVerification: true)
     }
     
-    let fb = FlyBuy.customer.current?.token ?? ""
+    let fb = FlyBuy.Core.customer.current?.token ?? ""
     let user = User(name: nm, email: em, phone: ph, vehicleType: vt, vehicleColor: vc, licensePlate: lp, flyBuyToken: fb)
     saveLocalUser(user: user)
     
@@ -45,7 +45,7 @@ class UpdateAccountViewController: UITableViewController {
   }
   
   override func viewDidLoad() {
-    let flybuyCustomer = FlyBuy.customer.current
+    let flybuyCustomer = FlyBuy.Core.customer.current
     
     if (flybuyCustomer != nil) {
         let info = flybuyCustomer?.info

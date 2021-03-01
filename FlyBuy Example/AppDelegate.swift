@@ -6,11 +6,12 @@
 //
 
 import UIKit
-import FlyBuySDK
 import UserNotifications
 import Firebase
 import FirebaseMessaging
 import CoreLocation
+import FlyBuy
+import FlyBuyPickup
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,11 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let token = "<YOUR TOKEN HERE>"
     assert(token != "<YOUR TOKEN HERE>", "You must add your FlyBuy token")
-    FlyBuy.configure(["token": token])
-
-    checkFlyBuyConfig()
+    FlyBuy.Core.configure(["token": token])
+    FlyBuyPickup.Manager.shared.configure()
     
-    FlyBuy.sites.fetch(page: 1) { (sites, pagination, error) -> (Void) in
+    FlyBuy.Core.sites.fetch(page: 1) { (sites, pagination, error) -> (Void) in
         NSLog("Sites have been fetched")
     }
     
@@ -82,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       // background, this callback will not be fired till the user taps on the
       // notification launching the application.
 
-      FlyBuy.handleRemoteNotification(userInfo)
+      FlyBuy.Core.handleRemoteNotification(userInfo)
 
       // Since we disable swizzling with Firebase you must let Messaging know
       // about the message, for Analytics
@@ -117,23 +117,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   extension AppDelegate {
     func useStagingAPIEndpoint() {
       UserDefaultsKey.apiBase.set(value: "https://flybuy-staging.radiusnetworks.com")
-    }
-
-    func checkAppUpgradeURL(_ error: Error?) {
-      if let error = error as? FlyBuyAPIError, error.statusCode == .appUpgradeRequired {
-        checkFlyBuyConfig()
-      }
-    }
-
-    func checkFlyBuyConfig() {
-      FlyBuy.config.fetch() { (config, error) in
-        if let upgradeSettings = config?["upgrade"] as? [String : Any],
-          let required = upgradeSettings["required"] as? Bool,
-          let urlStr = upgradeSettings["url"] as? String, let url = URL(string: urlStr),
-          let message = upgradeSettings["message"] as? String {
-            self.upgradeAlert(required: required, message: message, url: url)
-        }
-      }
     }
 
     func upgradeAlert(required: Bool, message: String, url: URL) {
@@ -247,14 +230,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       NotificationCenter.default.post(name: Notification.Name("APNSToken"),
                                       object: nil,
                                       userInfo: dataDict)
-      FlyBuy.updatePushToken(pushToken)
+      FlyBuy.Core.updatePushToken(pushToken)
     }
 
     // Receive data messages on iOS 10+ directly from FCM (bypassing APNs) when
     // the app is in the foreground.  To enable direct data messages, you can set
     // Messaging.messaging().shouldEstablishDirectChannel to true.
     func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-      FlyBuy.handleRemoteNotification(remoteMessage.appData)
+      FlyBuy.Core.handleRemoteNotification(remoteMessage.appData)
       print("Received data message: \(remoteMessage.appData)")
     }
   }

@@ -5,8 +5,8 @@
 //  Copyright © 2020 Radius Networks. All rights reserved.
 //
 
-import FlyBuySDK
 import UIKit
+import FlyBuy
 
 class OrderDetailsViewController: UIViewController {
 
@@ -25,10 +25,10 @@ class OrderDetailsViewController: UIViewController {
   @IBAction func onMyWayButtonPressed(_ sender: Any) {
     if let foodOrder = order {
       if let flyBuyOrder = foodOrder.flyBuyOrder {
-        createOrderEvent(order: flyBuyOrder, customerState: .enRoute) { (result) in
+        createOrderEvent(order: flyBuyOrder, customerState: "en_route") { (result) in
           if result == true {
             self.showAlert(title: "See you soon!", msg: "Your food will be ready on arrival.")
-            self.toggleButtons(state: CustomerState.enRoute)
+            self.toggleButtons(state: "en_route")
           }
           else {
             self.showAlert(title: "Uh-oh!", msg: "Something went wrong")
@@ -41,10 +41,10 @@ class OrderDetailsViewController: UIViewController {
   @IBAction func hereButtonPressed(_ sender: Any) {
     if let foodOrder = order {
       if let flyBuyOrder = foodOrder.flyBuyOrder {
-        createOrderEvent(order: flyBuyOrder, customerState: .waiting) { (result) in
+        createOrderEvent(order: flyBuyOrder, customerState: "waiting") { (result) in
           if result == true {
             self.showAlert(title: "Thanks!", msg: "Your food should be out shortly.")
-            self.toggleButtons(state: CustomerState.waiting)
+            self.toggleButtons(state: "waiting")
           }
           else {
             self.showAlert(title: "Uh-oh!", msg: "Something went wrong")
@@ -57,9 +57,9 @@ class OrderDetailsViewController: UIViewController {
   @IBAction func doneButtonPressed(_ sender: Any) {
     if let foodOrder = order {
       if let flyBuyOrder = foodOrder.flyBuyOrder {
-        createOrderEvent(order: flyBuyOrder, customerState: .completed) { (result) in
+        createOrderEvent(order: flyBuyOrder, customerState: "completed") { (result) in
           if result == true {
-            self.toggleButtons(state: CustomerState.completed)
+            self.toggleButtons(state: "completed")
             self.showOrderCompleteAlert(title: "Order Complete", msg: "Enjoy your food!")
           }
           else {
@@ -90,9 +90,9 @@ class OrderDetailsViewController: UIViewController {
     }
   }
   
-  func toggleButtons(state: CustomerState) {
+    func toggleButtons(state: String ) {
     DispatchQueue.main.async {
-      if state == .enRoute {
+      if state == "en_route" {
         self.onMyWayButton.isHidden = true
         self.hereButton.isHidden = false
         self.doneButton.isHidden = true
@@ -100,14 +100,14 @@ class OrderDetailsViewController: UIViewController {
         self.hereButtonHeightConstraint.constant = 0
         self.doneButtonTopConstraint.constant = 0
       }
-      if state == .waiting {
+      if state == "waiting" {
         self.onMyWayButton.isHidden = true
         self.hereButton.isHidden = true
         self.doneButton.isHidden = false
         self.hereButtonHeightConstraint.constant = 0
         self.doneButtonTopConstraint.constant = 0
       }
-      else if state == .completed {
+      else if state == "completed" {
         self.onMyWayButton.isHidden = true
         self.hereButton.isHidden = true
         self.doneButton.isHidden = true
@@ -135,7 +135,7 @@ class OrderDetailsViewController: UIViewController {
       orderNumberLabel.text = "Order #\(order.orderId)"
       
       if let flyBuyOrder = order.flyBuyOrder {
-        if flyBuyOrder.state == .completed || flyBuyOrder.state == .cancelled || flyBuyOrder.customerState == .completed {
+        if flyBuyOrder.state == "completed" || flyBuyOrder.state == "cancelled" || flyBuyOrder.customerState == "completed" {
           hideAllButtons()
         }
         else {

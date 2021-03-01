@@ -5,7 +5,6 @@
 //  Copyright © 2020 Radius Networks. All rights reserved.
 //
 
-import FlyBuySDK
 import UIKit
 
 class OrdersViewController: UITableViewController {

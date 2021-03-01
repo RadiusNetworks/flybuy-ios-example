@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import FlyBuySDK
+import FlyBuy
 
 struct FoodOrder {
   let orderId: String
@@ -14,24 +14,24 @@ struct FoodOrder {
   let total: Double
   let created: Double
   var status: String
-  var flyBuyOrder: Order?
+  var flyBuyOrder: FlyBuy.Order?
   
   var statusDisplay: String {
     get {
       if let flyBuyOrder = flyBuyOrder {
-        if flyBuyOrder.state == .completed  || flyBuyOrder.customerState == .completed {
+        if flyBuyOrder.state == "completed"  || flyBuyOrder.customerState == "completed" {
           return "Completed"
         }
-        else if flyBuyOrder.state == .cancelled {
+        else if flyBuyOrder.state == "cancelled" {
           return "Cancelled"
         }
-        else if flyBuyOrder.state == .delayed {
+        else if flyBuyOrder.state == "delayed" {
           return "Delayed"
         }
-        else if flyBuyOrder.customerState == .arrived {
+        else if flyBuyOrder.customerState == "arrived" {
           return "Arrived"
         }
-        else if flyBuyOrder.customerState == .waiting {
+        else if flyBuyOrder.customerState == "waiting" {
           return "Waiting"
         }
       }
@@ -53,14 +53,14 @@ struct FoodOrder {
   
 }
 
-func statusForState(state: OrderState) -> String {
+func statusForState(state: String) -> String {
   switch state {
-  case .cancelled: return "Cancelled"
-  case .completed: return "Completed"
-  case .created: return "Created"
-  case .delayed: return "Delayed"
-  case .gone: return "Gone"
-  case .ready: return "Ready"
+  case "cancelled" : return "Cancelled"
+  case "completed" : return "Completed"
+  case "created" : return "Created"
+  case "delayed" : return "Delayed"
+  case "gone" : return "Gone"
+  case "ready" : return "Ready"
   default: return "Unknown"
   }
 }
@@ -88,11 +88,11 @@ func dateForEpoch(epoch:Double) -> String {
 func fetchOrders(completion: @escaping ([FoodOrder]) -> Void) {
   var fetchedOrders:[FoodOrder] = []
 
-  FlyBuy.orders.fetch { (orders, error) -> (Void) in
+  FlyBuy.Core.orders.fetch { (orders, error) -> (Void) in
     let flyBuyOrders = orders ?? []
 
   for flyBuyOrder in flyBuyOrders {
-    if (flyBuyOrder.customerState != .completed) {
+    if (flyBuyOrder.customerState != "completed") {
       let status = statusForState(state: flyBuyOrder.state)
    
       let order = FoodOrder(
@@ -124,19 +124,20 @@ func createOrder(user:User, orderItems:[MenuItem], orderTotal:Double, completion
                                     licensePlate: user.licensePlate)
 
     let orderId = String(arc4random())
-    let siteId = (FlyBuy.sites.all?.first?.id)!
+    let siteId = (FlyBuy.Core.sites.all?.first?.id)!
     let pickupDateStart = Date()
     let pickupDateEnd = Date(timeIntervalSinceNow: 3600)
     let pickupWindow = PickupWindow(start: pickupDateStart, end: pickupDateEnd)
 
-    FlyBuy.orders.create(siteID: siteId, partnerIdentifier: orderId, customerInfo: customerInfo, pickupWindow: pickupWindow) { (order, error) -> (Void) in
+    FlyBuy.Core.orders.create(siteID: siteId, partnerIdentifier: orderId, customerInfo: customerInfo, pickupWindow: pickupWindow) { (order, error) -> (Void) in
       completion(true, orderId)
       return
     }
 }
 
-func createOrderEvent(order: Order, customerState: CustomerState, completion: @escaping (Bool) -> Void) {
-  FlyBuy.orders.event(orderID: order.id, customerState: customerState) { (order, error) in
+func createOrderEvent(order: Order, customerState: String, completion: @escaping (Bool) -> Void) {
+    let info = FlyBuy.OrderEvent.init(orderID: order.id, customerState: customerState, etaSeconds: 120)
+    FlyBuy.Core.orders.event(info: info) {(order, error) in
     if let error = error {
       print(error)
     }

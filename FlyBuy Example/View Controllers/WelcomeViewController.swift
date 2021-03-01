@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FlyBuySDK
 
 class WelcomeViewController: UIViewController {
 
