@@ -16,23 +16,23 @@ struct FoodOrder {
   var status: String
   var flyBuyOrder: FlyBuy.Order?
   
-  var statusDisplay: String {
+  var statusDisplay: String { // used for order-status-screen
     get {
-      if let flyBuyOrder = flyBuyOrder {
-        if flyBuyOrder.state == "completed"  || flyBuyOrder.customerState == "completed" {
-          return "Completed"
+      if let order = flyBuyOrder {
+        if order.redeemedAt == nil {
+            return "Unclaimed"
         }
-        else if flyBuyOrder.state == "cancelled" {
+        else if order.state == "cancelled" {
           return "Cancelled"
         }
-        else if flyBuyOrder.state == "delayed" {
-          return "Delayed"
+        //else if !order.isOpen() {
+            //return "Completed"
+        //}
+        else if order.customerState == "waiting" || order.customerState == "arrived" {
+          return "OnSite"
         }
-        else if flyBuyOrder.customerState == "arrived" {
-          return "Arrived"
-        }
-        else if flyBuyOrder.customerState == "waiting" {
-          return "Waiting"
+        else {
+            return "EnRoute"
         }
       }
       return status

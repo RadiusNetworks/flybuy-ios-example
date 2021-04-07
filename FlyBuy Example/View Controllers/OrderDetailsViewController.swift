@@ -90,9 +90,24 @@ class OrderDetailsViewController: UIViewController {
     }
   }
   
-    func toggleButtons(state: String ) {
+  func toggleButtons(state: String ) {
     DispatchQueue.main.async {
-      if state == "en_route" {
+      if state == "Cancelled" {
+        self.hideAllButtons()
+        self.orderDetailsTextView.text = "Order Cancelled"
+      }
+      else if state == "OnSite" {
+        self.onMyWayButton.isHidden = true
+        self.hereButton.isHidden = true
+        self.doneButton.isHidden = false
+        self.hereButtonHeightConstraint.constant = 0
+        self.doneButtonTopConstraint.constant = 0
+      }
+      else if state == "Completed" {
+        self.hideAllButtons()
+        self.orderDetailsTextView.text = "Order Completed"
+      }
+      else if state == "EnRoute" {
         self.onMyWayButton.isHidden = true
         self.hereButton.isHidden = false
         self.doneButton.isHidden = true
@@ -100,23 +115,9 @@ class OrderDetailsViewController: UIViewController {
         self.hereButtonHeightConstraint.constant = 0
         self.doneButtonTopConstraint.constant = 0
       }
-      if state == "waiting" {
-        self.onMyWayButton.isHidden = true
-        self.hereButton.isHidden = true
-        self.doneButton.isHidden = false
-        self.hereButtonHeightConstraint.constant = 0
-        self.doneButtonTopConstraint.constant = 0
-      }
-      else if state == "completed" {
-        self.onMyWayButton.isHidden = true
-        self.hereButton.isHidden = true
-        self.doneButton.isHidden = true
-      }
       else {
-        self.onMyWayButton.isHidden = false
-        self.hereButton.isHidden = false
-        self.hereButtonHeightConstraint.constant = 58
-        self.doneButton.isHidden = true
+        self.hideAllButtons()
+        self.orderDetailsTextView.text = "Unknown State"
       }
     }
   }
