@@ -25,9 +25,9 @@ struct FoodOrder {
         else if order.state == "cancelled" {
           return "Cancelled"
         }
-        //else if !order.isOpen() {
-            //return "Completed"
-        //}
+        else if !order.isOpen() {
+            return "Completed"
+        }
         else if order.customerState == "waiting" || order.customerState == "arrived" {
           return "OnSite"
         }

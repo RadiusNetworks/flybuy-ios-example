@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0194BE2E79C37A7F5D829E78 /* Pods_FlyBuy_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2896395236E21C39B14CB6C1 /* Pods_FlyBuy_Example.framework */; };
 		2B226FB022E76D05006A6F92 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B226FAF22E76D05006A6F92 /* user.swift */; };
 		2B226FB222E77393006A6F92 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B226FB122E77393006A6F92 /* WelcomeViewController.swift */; };
 		2B226FB422E77550006A6F92 /* UpdateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B226FB322E77550006A6F92 /* UpdateAccountViewController.swift */; };
@@ -22,7 +23,7 @@
 		2BA15DD422E0E572000DF9BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA15DD322E0E572000DF9BE /* Assets.xcassets */; };
 		2BFE3CC022E8C4B1005B9591 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE3CBF22E8C4B1005B9591 /* OrdersViewController.swift */; };
 		2BFE3CC222E8CA27005B9591 /* orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE3CC122E8CA27005B9591 /* orders.swift */; };
-		615DB96A25ED49EC003F6226 /* FlyBuyPickup in Frameworks */ = {isa = PBXBuildFile; productRef = 615DB96925ED49EC003F6226 /* FlyBuyPickup */; };
+		615DB96A25ED49EC003F6226 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 615DB96925ED49EC003F6226 /* SwiftPackageProductDependency */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2896395236E21C39B14CB6C1 /* Pods_FlyBuy_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyBuy_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B226FAF22E76D05006A6F92 /* user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		2B226FB122E77393006A6F92 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		2B226FB322E77550006A6F92 /* UpdateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccountViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				615DB96A25ED49EC003F6226 /* FlyBuyPickup in Frameworks */,
+				615DB96A25ED49EC003F6226 /* BuildFile in Frameworks */,
+				0194BE2E79C37A7F5D829E78 /* Pods_FlyBuy_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +128,7 @@
 		2B63310122F0EDA400C1814A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2896395236E21C39B14CB6C1 /* Pods_FlyBuy_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -191,7 +195,7 @@
 			);
 			name = "FlyBuy Example";
 			packageProductDependencies = (
-				615DB96925ED49EC003F6226 /* FlyBuyPickup */,
+				615DB96925ED49EC003F6226 /* SwiftPackageProductDependency */,
 			);
 			productName = "FlyBuy Example";
 			productReference = 2BA15DBE22E0E3AA000DF9BE /* FlyBuy Example.app */;
@@ -227,7 +231,7 @@
 			);
 			mainGroup = 2BA15DB522E0E3AA000DF9BE;
 			packageReferences = (
-				615DB96825ED49EC003F6226 /* XCRemoteSwiftPackageReference "flybuy-ios" */,
+				615DB96825ED49EC003F6226 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 2BA15DBF22E0E3AA000DF9BE /* Products */;
 			projectDirPath = "";
@@ -527,7 +531,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		615DB96825ED49EC003F6226 /* XCRemoteSwiftPackageReference "flybuy-ios" */ = {
+		615DB96825ED49EC003F6226 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:RadiusNetworks/flybuy-ios.git";
 			requirement = {
@@ -538,9 +542,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		615DB96925ED49EC003F6226 /* FlyBuyPickup */ = {
+		615DB96925ED49EC003F6226 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 615DB96825ED49EC003F6226 /* XCRemoteSwiftPackageReference "flybuy-ios" */;
+			package = 615DB96825ED49EC003F6226 /* RemoteSwiftPackageReference */;
 			productName = FlyBuyPickup;
 		};
 /* End XCSwiftPackageProductDependency section */
