@@ -44,7 +44,7 @@ class OrderDetailsViewController: UIViewController {
         createOrderEvent(order: flyBuyOrder, customerState: "waiting") { (result) in
           if result == true {
             self.showAlert(title: "Thanks!", msg: "Your food should be out shortly.")
-            self.toggleButtons(state: "waiting")
+            self.toggleButtons(state: "on_site")
           }
           else {
             self.showAlert(title: "Uh-oh!", msg: "Something went wrong")
@@ -92,27 +92,31 @@ class OrderDetailsViewController: UIViewController {
   
   func toggleButtons(state: String ) {
     DispatchQueue.main.async {
-      if state == "Cancelled" {
+      if state == "unclaimed" {
+        self.onMyWayButton.isHidden = false
+        self.hereButton.isHidden = true
+        self.doneButton.isHidden = true
+      }
+      else if state == "cancelled" {
         self.hideAllButtons()
         self.orderDetailsTextView.text = "Order Cancelled"
       }
-      else if state == "OnSite" {
+      else if state == "on_site" {
         self.onMyWayButton.isHidden = true
         self.hereButton.isHidden = true
         self.doneButton.isHidden = false
         self.hereButtonHeightConstraint.constant = 0
         self.doneButtonTopConstraint.constant = 0
       }
-      else if state == "Completed" {
+      else if state == "completed" {
         self.hideAllButtons()
         self.orderDetailsTextView.text = "Order Completed"
       }
-      else if state == "EnRoute" {
+      else if state == "en_route" {
         self.onMyWayButton.isHidden = true
         self.hereButton.isHidden = false
         self.doneButton.isHidden = true
         self.onMyWayButtonHeightConstraint.constant = 0
-        self.hereButtonHeightConstraint.constant = 0
         self.doneButtonTopConstraint.constant = 0
       }
       else {
@@ -136,19 +140,28 @@ class OrderDetailsViewController: UIViewController {
       orderNumberLabel.text = "Order #\(order.orderId)"
       
       if let flyBuyOrder = order.flyBuyOrder {
-        if flyBuyOrder.state == "completed" || flyBuyOrder.state == "cancelled" || flyBuyOrder.customerState == "completed" {
-          hideAllButtons()
+        if flyBuyOrder.redeemedAt == nil {
+          toggleButtons(state: "unclaimed")
+        }
+        else if flyBuyOrder.state == "cancelled" {
+          toggleButtons(state: "cancelled")
+        }
+        else if !flyBuyOrder.isOpen() {
+          toggleButtons(state: "completed")
+        }
+        else if flyBuyOrder.customerState == "waiting" ||
+                flyBuyOrder.customerState == "arrived" {
+          toggleButtons(state: "on_site")
         }
         else {
-          toggleButtons(state: flyBuyOrder.customerState)
+          toggleButtons(state: "en_route")
         }
       }
     }
   }
   
   func orderDetailsText(order:FoodOrder) -> String {
-    let orderDetails:String = "\(order.items)\n\n\(order.totalPrice)\n\nStatus: \(order.statusDisplay)"
+    let orderDetails:String = "\(order.items)\n\n\(order.totalPrice)\n\n\(order.status)"
     return orderDetails
   }
-
 }

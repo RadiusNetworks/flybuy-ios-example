@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     registerForNotifications()
     registerForSDKLocationNotifications()
     
-    let token = "<YOUR TOKEN HERE>"
+    let token = "97.eHzCUMApgzRNM5bqjQ6HWRqB"
     assert(token != "<YOUR TOKEN HERE>", "You must add your FlyBuy token")
     FlyBuy.Core.configure(["token": token])
     FlyBuyPickup.Manager.shared.configure()
@@ -134,9 +134,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func setupFirebase() {
       FirebaseApp.configure()
+      #if !DEBUG
+        Crashlytics.crashlytics()
+      #endif
       UNUserNotificationCenter.current().delegate = self
       Messaging.messaging().delegate = self
-      Messaging.messaging().shouldEstablishDirectChannel = true
     }
 
     // Register for remote notifications. This shows a permission dialog on first run, to
@@ -158,7 +160,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
       }
     }
-
+    
     func registerForSDKLocationNotifications() {
       NotificationCenter.default.addObserver(self, selector: #selector(sdkLocationNotification(notification:)), name: .locationAuthorizationNotDetermined, object: nil)
       NotificationCenter.default.addObserver(self, selector: #selector(sdkLocationNotification(notification:)), name: .locationNotAuthorized, object: nil)
@@ -219,25 +221,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
   }
 
-  extension AppDelegate : MessagingDelegate {
+extension AppDelegate : MessagingDelegate {
 
-    // Note: This callback is fired at each app startup and whenever a new token
-    // is generated.
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken pushToken: String) {
-      print("Push token: \(pushToken)")
-      let dataDict:[String: String] = ["token": pushToken]
-      // "FCMToken" for firebase
-      NotificationCenter.default.post(name: Notification.Name("APNSToken"),
-                                      object: nil,
-                                      userInfo: dataDict)
-      FlyBuy.Core.updatePushToken(pushToken)
+  // Note: This callback is fired at each app startup and whenever a new token
+  // is generated.
+  func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+    // fcmToken is now has an optional value, so check if there is a value
+    guard let token = fcmToken else {
+      return
     }
-
-    // Receive data messages on iOS 10+ directly from FCM (bypassing APNs) when
-    // the app is in the foreground.  To enable direct data messages, you can set
-    // Messaging.messaging().shouldEstablishDirectChannel to true.
-    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-      FlyBuy.Core.handleRemoteNotification(remoteMessage.appData)
-      print("Received data message: \(remoteMessage.appData)")
-    }
+    
+    FlyBuy.Core.updatePushToken(token)
   }
+}

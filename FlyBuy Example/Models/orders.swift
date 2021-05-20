@@ -16,29 +16,6 @@ struct FoodOrder {
   var status: String
   var flyBuyOrder: FlyBuy.Order?
   
-  var statusDisplay: String { // used for order-status-screen
-    get {
-      if let order = flyBuyOrder {
-        if order.redeemedAt == nil {
-            return "Unclaimed"
-        }
-        else if order.state == "cancelled" {
-          return "Cancelled"
-        }
-        //else if !order.isOpen() {
-            //return "Completed"
-        //}
-        else if order.customerState == "waiting" || order.customerState == "arrived" {
-          return "OnSite"
-        }
-        else {
-            return "EnRoute"
-        }
-      }
-      return status
-    }
-  }
-  
   var createdDate: String {
     get {
       return dateForEpoch(epoch: created)
@@ -92,14 +69,14 @@ func fetchOrders(completion: @escaping ([FoodOrder]) -> Void) {
     let flyBuyOrders = orders ?? []
 
   for flyBuyOrder in flyBuyOrders {
-    if (flyBuyOrder.customerState != "completed") {
+    if (flyBuyOrder.state != "completed") {
       let status = statusForState(state: flyBuyOrder.state)
    
       let order = FoodOrder(
-        orderId: flyBuyOrder.partnerIdentifier ?? "",
-        items: "",
+        orderId: flyBuyOrder.partnerIdentifier ?? "Unknown",
+        items: "Items",
         total: 0,
-        created: 0,
+        created: flyBuyOrder.createdAt!.timeIntervalSince1970,
         status: status,
         flyBuyOrder: flyBuyOrder)
     
