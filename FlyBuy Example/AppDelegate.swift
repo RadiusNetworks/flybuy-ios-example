@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     registerForNotifications()
     registerForSDKLocationNotifications()
     
-    let token = "<YOUR TOKEN HERE>"
+    let token = "97.eHzCUMApgzRNM5bqjQ6HWRqB"
     assert(token != "<YOUR TOKEN HERE>", "You must add your FlyBuy token")
     FlyBuy.Core.configure(["token": token])
     FlyBuyPickup.Manager.shared.configure()
