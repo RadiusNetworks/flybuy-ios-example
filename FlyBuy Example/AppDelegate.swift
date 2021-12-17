@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     registerForNotifications()
     registerForSDKLocationNotifications()
     
-    let token = "97.eHzCUMApgzRNM5bqjQ6HWRqB"
+    let token = "384.ZXenuQDR4PzNPpoi41SvFQxZ"
     assert(token != "<YOUR TOKEN HERE>", "You must add your FlyBuy token")
     FlyBuy.Core.configure(["token": token])
     FlyBuyPickup.Manager.shared.configure()
@@ -115,9 +115,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   extension AppDelegate {
+      /*
     func useStagingAPIEndpoint() {
       UserDefaultsKey.apiBase.set(value: "https://flybuy-staging.radiusnetworks.com")
     }
+       */
 
     func upgradeAlert(required: Bool, message: String, url: URL) {
       let alert = UIAlertController(title: "New Version Available", message: message, preferredStyle: .actionSheet)

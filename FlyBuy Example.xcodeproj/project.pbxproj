@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0194BE2E79C37A7F5D829E78 /* Pods_FlyBuy_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2896395236E21C39B14CB6C1 /* Pods_FlyBuy_Example.framework */; };
 		2B226FB022E76D05006A6F92 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B226FAF22E76D05006A6F92 /* user.swift */; };
 		2B226FB222E77393006A6F92 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B226FB122E77393006A6F92 /* WelcomeViewController.swift */; };
 		2B226FB422E77550006A6F92 /* UpdateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B226FB322E77550006A6F92 /* UpdateAccountViewController.swift */; };
@@ -23,7 +22,9 @@
 		2BA15DD422E0E572000DF9BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA15DD322E0E572000DF9BE /* Assets.xcassets */; };
 		2BFE3CC022E8C4B1005B9591 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE3CBF22E8C4B1005B9591 /* OrdersViewController.swift */; };
 		2BFE3CC222E8CA27005B9591 /* orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE3CC122E8CA27005B9591 /* orders.swift */; };
-		615DB96A25ED49EC003F6226 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 615DB96925ED49EC003F6226 /* SwiftPackageProductDependency */; };
+		4B2284A7276CDC6D00700F84 /* FlyBuyNotify.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2284A4276CDC6D00700F84 /* FlyBuyNotify.xcframework */; };
+		4B2284A8276CDC6D00700F84 /* FlyBuyPickup.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2284A5276CDC6D00700F84 /* FlyBuyPickup.xcframework */; };
+		4B2284A9276CDC6D00700F84 /* FlyBuy.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2284A6276CDC6D00700F84 /* FlyBuy.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +60,9 @@
 		2BFE3CBF22E8C4B1005B9591 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		2BFE3CC122E8CA27005B9591 /* orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orders.swift; sourceTree = "<group>"; };
 		3DE27AE569CF9A327D5E516D /* Pods-FlyBuy Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyBuy Example.release.xcconfig"; path = "Target Support Files/Pods-FlyBuy Example/Pods-FlyBuy Example.release.xcconfig"; sourceTree = "<group>"; };
+		4B2284A4276CDC6D00700F84 /* FlyBuyNotify.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FlyBuyNotify.xcframework; path = "../../../Downloads/flybuy-ios-2.2.2/FlyBuyNotify.xcframework"; sourceTree = "<group>"; };
+		4B2284A5276CDC6D00700F84 /* FlyBuyPickup.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FlyBuyPickup.xcframework; path = "../../../Downloads/flybuy-ios-2.2.2/FlyBuyPickup.xcframework"; sourceTree = "<group>"; };
+		4B2284A6276CDC6D00700F84 /* FlyBuy.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FlyBuy.xcframework; path = "../../../Downloads/flybuy-ios-2.2.2/FlyBuy.xcframework"; sourceTree = "<group>"; };
 		6184FA1E24B4D35800C8B2C8 /* FlyBuy Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FlyBuy Example.entitlements"; sourceTree = "<group>"; };
 		97AB1D38C784685BF94D7728 /* Pods-FlyBuy Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyBuy Example.debug.xcconfig"; path = "Target Support Files/Pods-FlyBuy Example/Pods-FlyBuy Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,8 +72,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				615DB96A25ED49EC003F6226 /* BuildFile in Frameworks */,
-				0194BE2E79C37A7F5D829E78 /* Pods_FlyBuy_Example.framework in Frameworks */,
+				4B2284A7276CDC6D00700F84 /* FlyBuyNotify.xcframework in Frameworks */,
+				4B2284A8276CDC6D00700F84 /* FlyBuyPickup.xcframework in Frameworks */,
+				4B2284A9276CDC6D00700F84 /* FlyBuy.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +133,9 @@
 		2B63310122F0EDA400C1814A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B2284A6276CDC6D00700F84 /* FlyBuy.xcframework */,
+				4B2284A4276CDC6D00700F84 /* FlyBuyNotify.xcframework */,
+				4B2284A5276CDC6D00700F84 /* FlyBuyPickup.xcframework */,
 				2896395236E21C39B14CB6C1 /* Pods_FlyBuy_Example.framework */,
 			);
 			name = Frameworks;
@@ -195,7 +203,6 @@
 			);
 			name = "FlyBuy Example";
 			packageProductDependencies = (
-				615DB96925ED49EC003F6226 /* SwiftPackageProductDependency */,
 			);
 			productName = "FlyBuy Example";
 			productReference = 2BA15DBE22E0E3AA000DF9BE /* FlyBuy Example.app */;
@@ -231,7 +238,6 @@
 			);
 			mainGroup = 2BA15DB522E0E3AA000DF9BE;
 			packageReferences = (
-				615DB96825ED49EC003F6226 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 2BA15DBF22E0E3AA000DF9BE /* Products */;
 			projectDirPath = "";
@@ -529,25 +535,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		615DB96825ED49EC003F6226 /* RemoteSwiftPackageReference */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:RadiusNetworks/flybuy-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		615DB96925ED49EC003F6226 /* SwiftPackageProductDependency */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 615DB96825ED49EC003F6226 /* RemoteSwiftPackageReference */;
-			productName = FlyBuyPickup;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2BA15DB622E0E3AA000DF9BE /* Project object */;
 }
