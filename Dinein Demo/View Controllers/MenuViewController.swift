@@ -16,7 +16,7 @@ class MenuViewController: UITableViewController {
   ]
   
   var cartItems:[MenuItem] = []
-  var cartTotal:Double = 0
+  var cartTotal:Double = 0.0
   
   @IBOutlet weak var cartLabel: UILabel!
   
@@ -36,6 +36,7 @@ class MenuViewController: UITableViewController {
     createOrder(user: localUser, orderItems: cartItems, orderTotal: cartTotal) { (result, orderNumber) in
       if (result == true) {
         self.showSuccessAlert(orderNumber: orderNumber)
+          print(self.cartTotal)
       }
     }
   }
@@ -65,7 +66,7 @@ class MenuViewController: UITableViewController {
     if let formattedTotal = formatter.string(from: total as NSNumber) {
       return formattedTotal
     }
-    return "0.00"
+    return "1.00"
   }
   
   func refreshCartLabel() {

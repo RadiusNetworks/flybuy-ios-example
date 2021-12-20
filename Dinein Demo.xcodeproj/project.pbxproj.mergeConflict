@@ -22,9 +22,16 @@
 		2BA15DD422E0E572000DF9BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA15DD322E0E572000DF9BE /* Assets.xcassets */; };
 		2BFE3CC022E8C4B1005B9591 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE3CBF22E8C4B1005B9591 /* OrdersViewController.swift */; };
 		2BFE3CC222E8CA27005B9591 /* orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE3CC122E8CA27005B9591 /* orders.swift */; };
+<<<<<<< Updated upstream
 		4B2284A7276CDC6D00700F84 /* FlyBuyNotify.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2284A4276CDC6D00700F84 /* FlyBuyNotify.xcframework */; };
 		4B2284A8276CDC6D00700F84 /* FlyBuyPickup.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2284A5276CDC6D00700F84 /* FlyBuyPickup.xcframework */; };
 		4B2284A9276CDC6D00700F84 /* FlyBuy.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2284A6276CDC6D00700F84 /* FlyBuy.xcframework */; };
+=======
+		4B2284A1276CD2CB00700F84 /* FlyBuy.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B22849E276CD2CB00700F84 /* FlyBuy.xcframework */; };
+		4B2284A2276CD2CB00700F84 /* FlyBuyNotify.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B22849F276CD2CB00700F84 /* FlyBuyNotify.xcframework */; };
+		4B2284A3276CD2CB00700F84 /* FlyBuyPickup.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2284A0276CD2CB00700F84 /* FlyBuyPickup.xcframework */; };
+		A98CDA76D76923A0E3C7CEC0 /* Pods_FlyBuy_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799E5E32170AAA4A0A65D3BE /* Pods_FlyBuy_Example.framework */; };
+>>>>>>> Stashed changes
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,10 +67,17 @@
 		2BFE3CBF22E8C4B1005B9591 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		2BFE3CC122E8CA27005B9591 /* orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orders.swift; sourceTree = "<group>"; };
 		3DE27AE569CF9A327D5E516D /* Pods-FlyBuy Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyBuy Example.release.xcconfig"; path = "Target Support Files/Pods-FlyBuy Example/Pods-FlyBuy Example.release.xcconfig"; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
 		4B2284A4276CDC6D00700F84 /* FlyBuyNotify.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FlyBuyNotify.xcframework; path = "../../../Downloads/flybuy-ios-2.2.2/FlyBuyNotify.xcframework"; sourceTree = "<group>"; };
 		4B2284A5276CDC6D00700F84 /* FlyBuyPickup.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FlyBuyPickup.xcframework; path = "../../../Downloads/flybuy-ios-2.2.2/FlyBuyPickup.xcframework"; sourceTree = "<group>"; };
 		4B2284A6276CDC6D00700F84 /* FlyBuy.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FlyBuy.xcframework; path = "../../../Downloads/flybuy-ios-2.2.2/FlyBuy.xcframework"; sourceTree = "<group>"; };
+=======
+		4B22849E276CD2CB00700F84 /* FlyBuy.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FlyBuy.xcframework; path = "../../../Downloads/flybuy-ios-2.2.2/FlyBuy.xcframework"; sourceTree = "<group>"; };
+		4B22849F276CD2CB00700F84 /* FlyBuyNotify.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FlyBuyNotify.xcframework; path = "../../../Downloads/flybuy-ios-2.2.2/FlyBuyNotify.xcframework"; sourceTree = "<group>"; };
+		4B2284A0276CD2CB00700F84 /* FlyBuyPickup.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FlyBuyPickup.xcframework; path = "../../../Downloads/flybuy-ios-2.2.2/FlyBuyPickup.xcframework"; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		6184FA1E24B4D35800C8B2C8 /* FlyBuy Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FlyBuy Example.entitlements"; sourceTree = "<group>"; };
+		799E5E32170AAA4A0A65D3BE /* Pods_FlyBuy_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyBuy_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97AB1D38C784685BF94D7728 /* Pods-FlyBuy Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyBuy Example.debug.xcconfig"; path = "Target Support Files/Pods-FlyBuy Example/Pods-FlyBuy Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,9 +86,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< Updated upstream
 				4B2284A7276CDC6D00700F84 /* FlyBuyNotify.xcframework in Frameworks */,
 				4B2284A8276CDC6D00700F84 /* FlyBuyPickup.xcframework in Frameworks */,
 				4B2284A9276CDC6D00700F84 /* FlyBuy.xcframework in Frameworks */,
+=======
+				4B2284A1276CD2CB00700F84 /* FlyBuy.xcframework in Frameworks */,
+				4B2284A2276CD2CB00700F84 /* FlyBuyNotify.xcframework in Frameworks */,
+				4B2284A3276CD2CB00700F84 /* FlyBuyPickup.xcframework in Frameworks */,
+				A98CDA76D76923A0E3C7CEC0 /* Pods_FlyBuy_Example.framework in Frameworks */,
+>>>>>>> Stashed changes
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,10 +154,17 @@
 		2B63310122F0EDA400C1814A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< Updated upstream
 				4B2284A6276CDC6D00700F84 /* FlyBuy.xcframework */,
 				4B2284A4276CDC6D00700F84 /* FlyBuyNotify.xcframework */,
 				4B2284A5276CDC6D00700F84 /* FlyBuyPickup.xcframework */,
 				2896395236E21C39B14CB6C1 /* Pods_FlyBuy_Example.framework */,
+=======
+				4B22849E276CD2CB00700F84 /* FlyBuy.xcframework */,
+				4B22849F276CD2CB00700F84 /* FlyBuyNotify.xcframework */,
+				4B2284A0276CD2CB00700F84 /* FlyBuyPickup.xcframework */,
+				799E5E32170AAA4A0A65D3BE /* Pods_FlyBuy_Example.framework */,
+>>>>>>> Stashed changes
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

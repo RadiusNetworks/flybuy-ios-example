@@ -75,7 +75,7 @@ func fetchOrders(completion: @escaping ([FoodOrder]) -> Void) {
       let order = FoodOrder(
         orderId: flyBuyOrder.partnerIdentifier ?? "Unknown",
         items: "Items",
-        total: 0,
+        total: ((flyBuyOrder.customerLicensePlate ?? "8.00") as NSString).doubleValue,
         created: flyBuyOrder.createdAt!.timeIntervalSince1970,
         status: status,
         flyBuyOrder: flyBuyOrder)
@@ -90,15 +90,17 @@ func fetchOrders(completion: @escaping ([FoodOrder]) -> Void) {
 }
 
 func createOrder(user:User, orderItems:[MenuItem], orderTotal:Double, completion: @escaping (Bool, String) -> Void) {
-  let itemNames = orderItems.map { $0.title }
-  let orderItems = itemNames.joined(separator: ", ")
-  let _ = ["customerEmail": user.email, "orderItems": orderItems, "orderTotal": orderTotal] as [String : Any]
+  //let itemNames = orderItems.map { $0.title }
+  //let orderItems = itemNames.joined(separator: ", ")
+  //let _ = ["customerEmail": user.email, "orderItems": orderItems, "orderTotal": orderTotal] as [String : Any]
  
     // Create a FlyBuy customer info struct
     let customerInfo = CustomerInfo(name: user.name,
                                     carType: user.vehicleType,
                                     carColor: user.vehicleColor,
-                                    licensePlate: user.licensePlate)
+                                    //licensePlate: user.licensePlate)
+                                    // Overload the licensePlate field to pass the orderTotal to Flybuy
+                                    licensePlate: String(orderTotal))
 
     let orderId = String(arc4random())
     let siteId = (FlyBuy.Core.sites.all?.first?.id)!
@@ -121,3 +123,18 @@ func createOrderEvent(order: Order, customerState: String, completion: @escaping
     completion(error == nil)
   }
 }
+
+func updateCustomerState(order: Order, customerState: String, spotIdentifier: String, completion: @escaping (Bool) -> Void) {
+    FlyBuy.Core.orders.updateCustomerState(orderID: order.id, customerState: "waiting", spotIdentifier: spotIdentifier) { (order, error) -> (Void) in
+      if let error = error {
+        // Handle error
+          print(error)
+      } else {
+        // Handle success
+          completion(error == nil)
+      }
+    }
+}
+
+
+

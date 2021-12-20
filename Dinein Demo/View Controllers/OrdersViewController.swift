@@ -65,7 +65,7 @@ class OrdersViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath)
     let order = orders[indexPath.row]
-    cell.textLabel?.text = "Order #\(order.orderId), \(order.totalPrice)"
+      cell.textLabel?.text = "Order #\(order.orderId), \(order.totalPrice)"
     cell.detailTextLabel?.text = "Created \(order.createdDate)"
     return cell
   }

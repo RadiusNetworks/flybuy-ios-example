@@ -17,12 +17,15 @@ class OrderDetailsViewController: UIViewController {
   @IBOutlet weak var onMyWayButton: BorderedButton!
   @IBOutlet weak var hereButton: BorderedButton!
   @IBOutlet weak var doneButton: BorderedButton!
+  @IBOutlet weak var checkinButton: BorderedButton!
   
   @IBOutlet weak var onMyWayButtonHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var hereButtonHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var doneButtonTopConstraint: NSLayoutConstraint!
 
-  @IBAction func onMyWayButtonPressed(_ sender: Any) {
+    @IBOutlet weak var tableNumberField: UITextField!
+    
+    @IBAction func onMyWayButtonPressed(_ sender: Any) {
     if let foodOrder = order {
       if let flyBuyOrder = foodOrder.flyBuyOrder {
         createOrderEvent(order: flyBuyOrder, customerState: "en_route") { (result) in
@@ -43,7 +46,7 @@ class OrderDetailsViewController: UIViewController {
       if let flyBuyOrder = foodOrder.flyBuyOrder {
         createOrderEvent(order: flyBuyOrder, customerState: "waiting") { (result) in
           if result == true {
-            self.showAlert(title: "Thanks!", msg: "Your food should be out shortly.")
+            self.showAlert(title: "Thanks!", msg: "Let's us know what table number you are at")
             self.toggleButtons(state: "on_site")
           }
           else {
@@ -60,7 +63,7 @@ class OrderDetailsViewController: UIViewController {
         createOrderEvent(order: flyBuyOrder, customerState: "completed") { (result) in
           if result == true {
             self.toggleButtons(state: "completed")
-            self.showOrderCompleteAlert(title: "Order Complete", msg: "Enjoy your food!")
+            self.showOrderCompleteAlert(title: "We'll be right out to your table!", msg: "Bon apetite!")
           }
           else {
             self.showAlert(title: "Uh-oh!", msg: "Something went wrong")
@@ -69,9 +72,27 @@ class OrderDetailsViewController: UIViewController {
       }
     }
   }
+    
+  @IBAction func checkinButtonPressed(_ sender: Any) {
+      if let foodOrder = order {
+        if let flyBuyOrder = foodOrder.flyBuyOrder {
+            let tableNumber = "Table " + (tableNumberField.text ?? "Table 1")
+            updateCustomerState(order: flyBuyOrder, customerState: "waiting", spotIdentifier: tableNumber ) { (result) in
+            if result == true {
+                self.toggleButtons(state: "on_site")
+              self.showOrderCompleteAlert(title: "Checked in", msg: "We'll be right there with your order!")
+            }
+            else {
+              self.showAlert(title: "Uh-oh!", msg: "Something went wrong")
+            }
+          }
+        }
+      }
+    }
+    
   
   func showOrderCompleteAlert(title: String, msg: String) {
-    let alert = UIAlertController(title: "Order Complete", message: "Enjoy your food!", preferredStyle: .alert)
+    let alert = UIAlertController(title: "We'll be right out to your table!", message: "Bon apetite!", preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { action in
       self.navigationController?.popViewController(animated: true)
     }))
@@ -96,6 +117,8 @@ class OrderDetailsViewController: UIViewController {
         self.onMyWayButton.isHidden = false
         self.hereButton.isHidden = true
         self.doneButton.isHidden = true
+        self.checkinButton.isHidden = true
+        self.tableNumberField.isHidden = true
       }
       else if state == "cancelled" {
         self.hideAllButtons()
@@ -104,9 +127,12 @@ class OrderDetailsViewController: UIViewController {
       else if state == "on_site" {
         self.onMyWayButton.isHidden = true
         self.hereButton.isHidden = true
-        self.doneButton.isHidden = false
+        self.doneButton.isHidden = true //false
+        self.tableNumberField.isHidden = false
+        self.checkinButton.isHidden = false
         self.hereButtonHeightConstraint.constant = 0
         self.doneButtonTopConstraint.constant = 0
+        
       }
       else if state == "completed" {
         self.hideAllButtons()
@@ -116,9 +142,19 @@ class OrderDetailsViewController: UIViewController {
         self.onMyWayButton.isHidden = true
         self.hereButton.isHidden = false
         self.doneButton.isHidden = true
+        self.checkinButton.isHidden = true
+        self.tableNumberField.isHidden = true
         self.onMyWayButtonHeightConstraint.constant = 0
         self.doneButtonTopConstraint.constant = 0
       }
+      else if state == "checkin" {
+          self.onMyWayButton.isHidden = true
+          self.hereButton.isHidden = true
+          self.doneButton.isHidden = true
+          self.checkinButton.isHidden = false
+          self.onMyWayButtonHeightConstraint.constant = 0
+          self.doneButtonTopConstraint.constant = 0
+        }
       else {
         self.hideAllButtons()
         self.orderDetailsTextView.text = "Unknown State"
@@ -130,11 +166,25 @@ class OrderDetailsViewController: UIViewController {
     self.onMyWayButton.isHidden = true
     self.hereButton.isHidden = true
     self.doneButton.isHidden = true
+    self.checkinButton.isHidden = true
+    
+    self.tableNumberField.isHidden = true
   }
+    
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
+      let attributes = [
+          NSAttributedString.Key.foregroundColor: UIColor.gray,
+          NSAttributedString.Key.font : UIFont(name: "Arial", size: 25)!
+      ]
+
+      self.tableNumberField.attributedPlaceholder = NSAttributedString(string: "Enter Table Number", attributes: attributes)
+      
+      // The tableNumberField.text="0" in the storyboard in order to save the textattributed values, setting the attributes here didn't take
+      self.tableNumberField.text = ""
+      
     if let order = self.order {
       orderDetailsTextView.text = orderDetailsText(order:order)
       orderNumberLabel.text = "Order #\(order.orderId)"
