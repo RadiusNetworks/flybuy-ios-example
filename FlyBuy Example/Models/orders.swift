@@ -91,29 +91,32 @@ func fetchOrders(completion: @escaping ([FoodOrder]) -> Void) {
 
 func createOrder(user:User, orderItems:[MenuItem], orderTotal:Double, completion: @escaping (Bool, String) -> Void) {
   let itemNames = orderItems.map { $0.title }
-  let orderItems = itemNames.joined(separator: ", ")
-  let _ = ["customerEmail": user.email, "orderItems": orderItems, "orderTotal": orderTotal] as [String : Any]
+  let _orderItems = itemNames.joined(separator: ", ")
  
-    // Create a FlyBuy customer info struct
-    let customerInfo = CustomerInfo(name: user.name,
-                                    carType: user.vehicleType,
-                                    carColor: user.vehicleColor,
-                                    licensePlate: user.licensePlate)
-
-    let orderId = String(arc4random())
-    let siteId = (FlyBuy.Core.sites.all?.first?.id)!
-    let pickupDateStart = Date()
-    let pickupDateEnd = Date(timeIntervalSinceNow: 3600)
-    let pickupWindow = PickupWindow(start: pickupDateStart, end: pickupDateEnd)
-
-    FlyBuy.Core.orders.create(siteID: siteId, partnerIdentifier: orderId, customerInfo: customerInfo, pickupWindow: pickupWindow) { (order, error) -> (Void) in
+  let orderId = String(arc4random())
+  let pickupDateStart = Date()
+  let pickupDateEnd = Date(timeIntervalSinceNow: 3600)
+  let pickupWindow = PickupWindow(start: pickupDateStart, end: pickupDateEnd)
+    
+  let orderOptions = OrderOptions.Builder(customerName: user.name)
+    .setCustomerPhone(user.phone)
+    .setCustomerCarColor(user.vehicleColor)
+    .setCustomerCarType(user.vehicleType)
+    .setCustomerCarPlate(user.licensePlate)
+    .setPartnerIdentifier(orderId)
+    .setPickupWindow(pickupWindow)
+    .setState("ready")
+    .setPickupType("curbside")
+    .build()
+    
+    FlyBuy.Core.orders.create(sitePartnerIdentifier: "1111", orderOptions: orderOptions) { (order, error) -> (Void) in
       completion(true, orderId)
       return
     }
 }
 
 func createOrderEvent(order: Order, customerState: String, completion: @escaping (Bool) -> Void) {
-    let info = FlyBuy.OrderEvent.init(orderID: order.id, customerState: customerState, etaSeconds: 120)
+    let info = FlyBuy.OrderEvent.init(orderID: order.id, customerState: customerState, etaSeconds: 120, etaSource: "GPS")
     FlyBuy.Core.orders.event(info: info) {(order, error) in
     if let error = error {
       print(error)
