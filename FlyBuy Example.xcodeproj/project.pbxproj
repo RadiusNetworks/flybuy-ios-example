@@ -23,7 +23,7 @@
 		2BA15DD422E0E572000DF9BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA15DD322E0E572000DF9BE /* Assets.xcassets */; };
 		2BFE3CC022E8C4B1005B9591 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE3CBF22E8C4B1005B9591 /* OrdersViewController.swift */; };
 		2BFE3CC222E8CA27005B9591 /* orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFE3CC122E8CA27005B9591 /* orders.swift */; };
-		615DB96A25ED49EC003F6226 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 615DB96925ED49EC003F6226 /* SwiftPackageProductDependency */; };
+		618EA89F2A784E6A00DDCE77 /* FlyBuyPickup in Frameworks */ = {isa = PBXBuildFile; productRef = 618EA89E2A784E6A00DDCE77 /* FlyBuyPickup */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,8 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				615DB96A25ED49EC003F6226 /* BuildFile in Frameworks */,
 				0194BE2E79C37A7F5D829E78 /* Pods_FlyBuy_Example.framework in Frameworks */,
+				618EA89F2A784E6A00DDCE77 /* FlyBuyPickup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +136,7 @@
 		2BA15DB522E0E3AA000DF9BE = {
 			isa = PBXGroup;
 			children = (
+				6146A6A8276D07110004F694 /* Packages */,
 				2BA15DC022E0E3AA000DF9BE /* FlyBuy Example */,
 				2BA15DBF22E0E3AA000DF9BE /* Products */,
 				2B63310122F0EDA400C1814A /* Frameworks */,
@@ -175,6 +176,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		6146A6A8276D07110004F694 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,7 +203,7 @@
 			);
 			name = "FlyBuy Example";
 			packageProductDependencies = (
-				615DB96925ED49EC003F6226 /* SwiftPackageProductDependency */,
+				618EA89E2A784E6A00DDCE77 /* FlyBuyPickup */,
 			);
 			productName = "FlyBuy Example";
 			productReference = 2BA15DBE22E0E3AA000DF9BE /* FlyBuy Example.app */;
@@ -208,7 +216,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = "Radius Networks";
 				TargetAttributes = {
 					2BA15DBD22E0E3AA000DF9BE = {
@@ -231,7 +239,7 @@
 			);
 			mainGroup = 2BA15DB522E0E3AA000DF9BE;
 			packageReferences = (
-				615DB96825ED49EC003F6226 /* RemoteSwiftPackageReference */,
+				618EA89D2A784E6A00DDCE77 /* XCRemoteSwiftPackageReference "flybuy-ios" */,
 			);
 			productRefGroup = 2BA15DBF22E0E3AA000DF9BE /* Products */;
 			projectDirPath = "";
@@ -365,6 +373,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -426,6 +435,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -462,7 +472,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "FlyBuy Example/FlyBuy Example.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DF6DBXCH9A;
+				DEVELOPMENT_TEAM = 2Z2S6NCD7P;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -474,7 +484,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.radiusnetworks.flybuy.ios-example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.radiusnetworks.flybuy-pickup-ios-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -488,7 +498,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "FlyBuy Example/FlyBuy Example.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DF6DBXCH9A;
+				DEVELOPMENT_TEAM = 2Z2S6NCD7P;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -500,7 +510,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.radiusnetworks.flybuy.ios-example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.radiusnetworks.flybuy-pickup-ios-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -531,20 +541,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		615DB96825ED49EC003F6226 /* RemoteSwiftPackageReference */ = {
+		618EA89D2A784E6A00DDCE77 /* XCRemoteSwiftPackageReference "flybuy-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:RadiusNetworks/flybuy-ios.git";
+			repositoryURL = "https://github.com/RadiusNetworks/flybuy-ios";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				kind = exactVersion;
+				version = 2.7.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		615DB96925ED49EC003F6226 /* SwiftPackageProductDependency */ = {
+		618EA89E2A784E6A00DDCE77 /* FlyBuyPickup */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 615DB96825ED49EC003F6226 /* RemoteSwiftPackageReference */;
+			package = 618EA89D2A784E6A00DDCE77 /* XCRemoteSwiftPackageReference "flybuy-ios" */;
 			productName = FlyBuyPickup;
 		};
 /* End XCSwiftPackageProductDependency section */

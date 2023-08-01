@@ -50,13 +50,21 @@ class RedeemViewController: UITableViewController {
     
     @IBAction func didPressClaimButton(_ sender: Any) {
       let redemptionCode = code.text!
-        let flybuyCustomer = FlyBuy.Core.customer.current
+      let flybuyCustomer = FlyBuy.Core.customer.current
 
       if (flybuyCustomer != nil) {
         let customerInfo = flybuyCustomer?.info
         
-        FlyBuy.Core.orders.claim(withRedemptionCode: redemptionCode, customerInfo: customerInfo!) { (order, error) -> (Void) in
-          if (order == nil) {
+        let orderOptions = OrderOptions.Builder(customerName: customerInfo!.name)
+          .setCustomerPhone(customerInfo?.phone)
+          .setCustomerCarColor(customerInfo?.carColor)
+          .setCustomerCarType(customerInfo?.carType)
+          .setCustomerCarPlate(customerInfo?.licensePlate)
+          .setPickupType("curbside") // optional
+          .build()
+        
+        FlyBuy.Core.orders.claim(withRedemptionCode: redemptionCode, orderOptions: orderOptions) { (order, error) -> (Void) in
+          if error == nil {
             self.showErrorAlert()
           } else {
             FlyBuy.Core.orders.fetch()

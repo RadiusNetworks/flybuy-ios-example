@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   let gcmMessageIDKey = "gcm.message_id"
 
+  // static configuration of your test site partner_identifier
+  static let site_number: String = "1111"
+    
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     CLLocationManager().requestWhenInUseAuthorization()
@@ -26,13 +29,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     registerForNotifications()
     registerForSDKLocationNotifications()
     
+    // add you Flybuy SDK authentication token here
     let token = "97.eHzCUMApgzRNM5bqjQ6HWRqB"
     assert(token != "<YOUR TOKEN HERE>", "You must add your FlyBuy token")
-    FlyBuy.Core.configure(["token": token])
+
+    //configure SDK
+    let configOptions = ConfigOptions.Builder(token: token).build()
+    FlyBuy.Core.configure(withOptions: configOptions)
+
+    // cofigure pickup module
     FlyBuyPickup.Manager.shared.configure()
-    
-    FlyBuy.Core.sites.fetch(page: 1) { (sites, pagination, error) -> (Void) in
-        NSLog("Sites have been fetched")
+
+    // check site exists
+    FlyBuy.Core.sites.fetchByPartnerIdentifier(partnerIdentifier: AppDelegate.site_number) {
+        (site, error) -> (Void) in
+      if let error = error {
+        NSLog("Site not found, " + error.message)
+      } else {
+        NSLog("Site has been fetched")
+      }
     }
     
     return true
@@ -75,6 +90,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       // appropriate. See also applicationDidEnterBackground:.
     }
 
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        FirebaseApp.configure()
+    }
+    
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -115,10 +134,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   extension AppDelegate {
-    func useStagingAPIEndpoint() {
-      UserDefaultsKey.apiBase.set(value: "https://flybuy-staging.radiusnetworks.com")
-    }
-
     func upgradeAlert(required: Bool, message: String, url: URL) {
       let alert = UIAlertController(title: "New Version Available", message: message, preferredStyle: .actionSheet)
       alert.addAction(UIAlertAction(title: "Update App", style: .default, handler: { (action) in
@@ -151,14 +166,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       }
 
       UIApplication.shared.registerForRemoteNotifications()
-
-      InstanceID.instanceID().instanceID { (result, error) in
-        if let error = error {
-          print("Error fetching remote instance ID: \(error)")
-        } else if let result = result {
-          print("Remote instance ID token: \(result.token)")
-        }
-      }
     }
     
     func registerForSDKLocationNotifications() {

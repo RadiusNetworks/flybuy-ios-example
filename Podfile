@@ -1,4 +1,4 @@
-platform :ios, "13.0"
+platform :ios, "15.2"
 use_frameworks!
 
 target 'FlyBuy Example' do
