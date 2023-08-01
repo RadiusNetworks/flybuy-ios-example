@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   let gcmMessageIDKey = "gcm.message_id"
 
+  // static configuration of your test site partner_identifier
+  static let site_number: String = "1111"
+    
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     CLLocationManager().requestWhenInUseAuthorization()
@@ -26,13 +29,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     registerForNotifications()
     registerForSDKLocationNotifications()
     
+    // add you Flybuy SDK authentication token here
     let token = "97.eHzCUMApgzRNM5bqjQ6HWRqB"
     assert(token != "<YOUR TOKEN HERE>", "You must add your FlyBuy token")
+
+    //configure SDK
     let configOptions = ConfigOptions.Builder(token: token).build()
     FlyBuy.Core.configure(withOptions: configOptions)
 
-    let site_number = "1111"
-    FlyBuy.Core.sites.fetchByPartnerIdentifier(partnerIdentifier: site_number) {
+    // cofigure pickup module
+    FlyBuyPickup.Manager.shared.configure()
+
+    // check site exists
+    FlyBuy.Core.sites.fetchByPartnerIdentifier(partnerIdentifier: AppDelegate.site_number) {
         (site, error) -> (Void) in
       if let error = error {
         NSLog("Site not found, " + error.message)

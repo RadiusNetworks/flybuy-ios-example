@@ -64,7 +64,7 @@ class RedeemViewController: UITableViewController {
           .build()
         
         FlyBuy.Core.orders.claim(withRedemptionCode: redemptionCode, orderOptions: orderOptions) { (order, error) -> (Void) in
-          if let error = error {
+          if error == nil {
             self.showErrorAlert()
           } else {
             FlyBuy.Core.orders.fetch()

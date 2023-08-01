@@ -91,7 +91,6 @@ func fetchOrders(completion: @escaping ([FoodOrder]) -> Void) {
 
 func createOrder(user:User, orderItems:[MenuItem], orderTotal:Double, completion: @escaping (Bool, String) -> Void) {
   let itemNames = orderItems.map { $0.title }
-  let _orderItems = itemNames.joined(separator: ", ")
  
   let orderId = String(arc4random())
   let pickupDateStart = Date()
@@ -109,7 +108,7 @@ func createOrder(user:User, orderItems:[MenuItem], orderTotal:Double, completion
     .setPickupType("curbside")
     .build()
     
-    FlyBuy.Core.orders.create(sitePartnerIdentifier: "1111", orderOptions: orderOptions) { (order, error) -> (Void) in
+    FlyBuy.Core.orders.create(sitePartnerIdentifier: AppDelegate.site_number, orderOptions: orderOptions) { (order, error) -> (Void) in
       completion(true, orderId)
       return
     }
