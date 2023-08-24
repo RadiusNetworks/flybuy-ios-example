@@ -546,7 +546,7 @@
 			repositoryURL = "https://github.com/RadiusNetworks/flybuy-ios";
 			requirement = {
 				kind = exactVersion;
-				version = 2.7.1;
+				version = 2.7.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
